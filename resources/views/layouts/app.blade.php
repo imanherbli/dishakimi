@@ -12,14 +12,14 @@
             background-color: #f8f9fa;
         }
         .navbar-custom {
-            background-color: #0d6efd;
+            background: linear-gradient(90deg, #80bbc1ff, #17575eff);
         }
         .navbar-custom .nav-link,
         .navbar-custom .navbar-brand {
             color: #fff;
         }
         .navbar-custom .nav-link:hover {
-            color: #ffc107;
+            color: #ffffffff;
         }
         main {
             padding: 20px;

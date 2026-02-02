@@ -7,14 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         body {
-            background: #e0f7f7;
+    background: linear-gradient(135deg, #476d76ff, #36bcc1ff);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         /* Navbar */
         .navbar-custom {
-            background: linear-gradient(90deg, #26c6da, #00acc1);
-        }
+background-color:rgba(0, 0, 0, 0.3);        }
         .navbar-custom .navbar-brand,
         .navbar-custom .nav-link {
             color: #fff;
@@ -36,14 +35,32 @@
         }
         .card-control:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 35px rgba(47, 27, 27, 0.2);
         }
 
-        /* Card colors */
-        .card-img-before { background: linear-gradient(135deg, #4facfe, #00f2fe); }
-        .card-video { background: linear-gradient(135deg, #26c6da, #38f9d7); }
-        .card-doctors { background: linear-gradient(135deg, #26c6da, #00f2fe); color: #333; }
-        .card-services { background: linear-gradient(135deg, #26c6da, #00f2fe); }
+  /* Card colors */
+.card-img-before {
+    box-shadow: 2px 5px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, #d1fdff46, #39b4b8ff);
+}
+
+.card-video {    box-shadow: 2px 5px 5px 5px rgba(0,0,0,0.1);
+
+    background: linear-gradient(135deg, #d1fdff46, #39b4b8ff);
+}
+
+.card-doctors {    box-shadow: 2px 5px 5px 5px rgba(0,0,0,0.1);
+
+    background: linear-gradient(135deg, #d1fdff46, #39b4b8ff);
+
+}
+
+.card-services {    box-shadow: 2px 5px 5px 5px rgba(0,0,0,0.1);
+
+    background: linear-gradient(135deg, #d1fdff46, #39b4b8ff);
+    border: 3px solid rgba(8, 96, 126, 0,61); /* بدل border-size */
+}
+
 
         /* Icon + circle */
         .icon-wrapper {
@@ -61,7 +78,7 @@
             background: #ffffffff;
             color: #000000ff;
             width: 38px;
-            height: 38px;
+            height: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -85,8 +102,8 @@
         }
 
         .container-cards {
-            padding-top: 80px;
-            padding-bottom: 80px;
+            padding-top: 60px;
+            padding-bottom: 15px;
         }
 
         @media (max-width: 768px) {

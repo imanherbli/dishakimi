@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(135deg, #55d9ddff, #39b4b8ff);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .card {
@@ -26,12 +26,12 @@
             color: #333;
         }
         .btn-primary {
-            background: linear-gradient(45deg, #6a11cb, #2575fc);
+    background: linear-gradient(135deg, #55d9ddff, #39b4b8ff);
             border: none;
             transition: background 0.3s ease;
         }
         .btn-primary:hover {
-            background: linear-gradient(45deg, #2575fc, #6a11cb);
+    background: linear-gradient(135deg, #55d9ddff, #39b4b8ff);
         }
         input.form-control {
             border-radius: 10px;

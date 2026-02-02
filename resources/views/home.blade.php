@@ -5,6 +5,8 @@
 <title>{{ __('home_page_title') }} - {{ __('clinic_name') }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <link rel="icon" href="{{ asset('favicon.ico.png') }}" type="image/png">
@@ -23,8 +25,11 @@
             background-size: cover;
             background-position: center;
             height: 100vh;
-            display: flex;
-            align-items: center;
+            display: flex;,
+     opacity: 0.9; /* القيم بين 0 و 1 فقط */
+             align-items: center;
+             font-family: 'Poppins', sans-serif;
+
             justify-content: center;
             position: relative;
         }
@@ -47,7 +52,7 @@
 
         /* Navbar */
         .navbar-custom {
-            background: linear-gradient(90deg, #4bb9c8ff, #00acc1);
+            background: linear-gradient(90deg, #54a5aeff, #17575eff);
         }
         .navbar-custom .navbar-brand,
         .navbar-custom .nav-link {
@@ -240,7 +245,23 @@
     cursor: ew-resize;
     z-index: 10;
 }
- 
+ .slider-button {
+    background-color: rgba(52, 51, 51, 0.6);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content:"<>";
+    transform: translate(-50%, -50%);
+}
+.slider-button::before {
+  content: "< >";
+  color: #aea2a2ff;
+  font-size: 21px;
+   
+}
 
 /**/
 
@@ -404,11 +425,11 @@
     
  @foreach($items as $item)
 <div class="ba-container" data-id="{{ $item->id }}">
-    <img src="{{ asset('storage/'.$item->before_image) }}" alt="Before">
-    <div class="ba-overlay" style="width: 200px;">
-        <img src="{{ asset('storage/'.$item->after_image) }}" alt="After">
+        <img src="{{ asset('fotos/'.$item->after_image) }}" alt="After">
+    <div class="ba-overlay" style="width: 180px;">
+<img src="{{ asset('fotos/'.$item->before_image) }}" alt="Before">
     </div>
-    <div class="ba-handle" style="left: 200px;"></div>
+    <div class="ba-handle" style="left: 50%; text-align:center; "> <div class="slider-button"> </div></div>
 </div>
         
 @endforeach

@@ -1,24 +1,39 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إضافة خدمة جديدة</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+@extends('layouts.app')
+
+@section('content')
     <style>
+        body {
+            background: #f4f6fa;
+            font-family: 'Cairo', sans-serif;
+        }
+        h2 {
+            color: #409caeff;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
         .icon-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
         }
         .icon-item {
-            border: 1px solid #ddd;
-            padding: 5px;
+            flex: 0 0 80px;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            padding: 10px;
             cursor: pointer;
             text-align: center;
+            transition: 0.3s;
+            background-color: #fff;
+        }
+        .icon-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: #409caeff;
         }
         .icon-item.selected {
-            border-color: #0d6efd;
+            border-color: #409caeff;
             background-color: #e7f1ff;
         }
         .icon-item img {
@@ -26,11 +41,29 @@
             max-height: 50px;
             display: block;
             margin: auto;
+            margin-bottom: 5px;
+        }
+        .icon-item small {
+            display: block;
+            font-size: 0.75rem;
+            color: #555;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 12px;
+            font-weight: 600;
+            border-radius: 50px;
+        }
+        .form-control {
+            border-radius: 10px;
+        }
+        .mb-3 label {
+            font-weight: 600;
+            color: #333;
         }
     </style>
 </head>
-<body>
-<div class="container py-5">
+ <div class="container py-5">
     <h2>إضافة خدمة جديدة</h2>
 
     @if ($errors->any())
@@ -65,13 +98,13 @@
                 @foreach ($icons as $icon)
                     <div class="icon-item" data-name="{{ $icon }}">
                         <img src="{{ asset('icons/'.$icon) }}" alt="icon">
-                        <small>{{ $icon }}</small>
+                        <small>{{ pathinfo($icon, PATHINFO_FILENAME) }}</small>
                     </div>
                 @endforeach
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">حفظ</button>
+        <button type="submit" class="btn btn-success  ">حفظ الخدمة</button>
     </form>
 </div>
 
@@ -87,5 +120,4 @@
         });
     });
 </script>
-</body>
-</html>
+@endsection

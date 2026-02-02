@@ -25,8 +25,11 @@ class BeforeAfterController extends Controller
             'after_image'  => 'required|image|mimes:jpg,jpeg,png',
         ]);
 
-        $beforePath = $request->file('before_image')->store('before_after', 'public');
-        $afterPath  = $request->file('after_image')->store('before_after', 'public');
+        $beforePath = $request->file('before_image')->getClientOriginalName();
+$request->file('before_image')->move(public_path('fotos'), $beforePath);
+
+$afterPath = $request->file('after_image')->getClientOriginalName();
+$request->file('after_image')->move(public_path('fotos'), $afterPath);
 
         BeforeAfter::create([
             'title'        => $request->title,
